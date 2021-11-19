@@ -1,25 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ButtonComponent } from './components/button/button.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
-import { UserListComponent } from './components/userList/userList.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const appRoutes:Routes = [
   {
     path: 'login',
     component: LoginComponent
-  },
-  {
-    path: 'userList',
-    component: UserListComponent
   },
   {
     path: '',
@@ -30,17 +24,18 @@ const appRoutes:Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ButtonComponent,
     LoginComponent,
-    UserListComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdminComponent,
+
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

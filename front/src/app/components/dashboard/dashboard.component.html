@@ -1,13 +1,62 @@
 
-<form (click)="onClick()">
-    <header>
-        <h1>
-            {{ title }}
-        </h1>
-        <h3>
-            {{ subject }}
-        </h3>
-        <!--<app-button color="purple" text="Initiate"></app-button>-->
-        <button type="submit" class="btn" >Login</button>
-    </header>
-</form>
+<H2>User List</H2><br />
+<div class="tables">
+    <table width="50%" style="float: left;">
+        <thead>
+            <tr>
+                <th colspan="2">User List</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="10%">1.</td>
+                <td width="90%">ABC</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>PQR</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>XYZ</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>ABC</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>PQR</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>XYZ</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table width="50%" style="float: left;">
+        <thead>
+            <tr>
+                <th colspan="2">User Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td width="30%">Name</td>
+                <td width="70%">ABC</td>
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td>abc@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Contact No.</td>
+                <td>9876543210</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <button type="submit" class="btn" (click)="logout()">LogOut</button>
+</div>

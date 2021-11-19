@@ -1,13 +1,21 @@
-<form class="login-form" (ngSubmit)="onLogin()" >
-    <div class="form-control">
-        <label for="email">Email</label>
-        <input type="email" name="email"
-        [(ngModel)]="email" id="email" placeholder="Email">
-    </div>
-    <div class="form-control">
-        <label for="password">Password</label>
-        <input type="password" name="password"
-         [(ngModel)]="password"  id="password" placeholder="Password">
-         <button type="submit" class="btn">Login</button>
-    </div>
-</form>
+<section class="logForm">
+    <h1 class="title">Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="contact-form row">
+
+        <div class="form-field col-lg-6 ">
+            <input id="email" class="input-text js-input" formControlName="email" type="email" required>
+            <label class="label" for="email">E-mail</label>
+        </div>
+        <br>
+        <div class="form-field col-lg-6">
+            <input id="password" class="input-text js-input" formControlName="password" type="password" required>
+            <label class="label" for="password">Password</label>
+        </div>
+
+
+
+        <div class="form-field col-lg-12">
+            <input class="submit-btn" type="submit" value="Submit">
+        </div>
+    </form>
+</section>

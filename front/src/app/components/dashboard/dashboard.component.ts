@@ -1,26 +1,23 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
-
 export class DashboardComponent implements OnInit {
-    @Input()
+  @Input()
   text!: string;
   @Input() color!: string;
   title: string = 'Project A';
   subject: string = 'Dashboard';
 
-  constructor(private router:Router) {}
+  constructor(private auth: AuthService) {}
 
   ngOnInit(): void {}
 
-  onClick() {
-      alert('Go to the Login Page!');
-    this.router.navigate(['login']);
-    }
-
+  logout(): void {
+    this.auth.logout();
+  }
 }
