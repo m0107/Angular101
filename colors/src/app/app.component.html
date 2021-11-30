@@ -1,0 +1,33 @@
+<div id="app" appColor>
+    <div class="wrap">
+
+        <!-- Header -->
+        <header>
+            <h1>{{colorService.colorsList.value.length}} Colors!</h1>
+            <button (click)="partyMode()">Party!</button>
+        </header>
+
+        <!-- Table -->
+        <table id="tableColors">
+            <!-- Head -->
+            <thead>
+                <tr>
+                    <th>Colors</th>
+                    <th>Color Code</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <!-- Body -->
+            <tbody>
+                <tr *ngFor="let c of colorService.colorsList.value; index as i">
+                    <td>
+                        <span class="swatch" [appColor]="c"></span>
+                    </td>
+                    <td>{{c | uppercase}}</td>
+                    <td><button (click)="selectColor(c)">Select</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
